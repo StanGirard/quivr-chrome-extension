@@ -1,11 +1,11 @@
 {
     "manifest_version": 3,
-    "name": "URL Sender",
-    "version": "1.0",
+    "name": "Quivr",
+    "version": "0.0.1",
     "permissions": ["activeTab", "storage","notifications"],
     "action": {
         "default_icon": {
-          "48": "icon.png"
+          "48": "128.png"
         }
     },
     "background": {
@@ -17,7 +17,7 @@
           "default": "Ctrl+Shift+Y",
           "mac": "Command+Shift+Y"
         },
-        "description": "Send URL to the API"
+        "description": "Quivr"
       }
     },
     "options_page": "options.html"

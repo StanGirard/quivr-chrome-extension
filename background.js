@@ -1,9 +1,18 @@
 chrome.commands.onCommand.addListener((command) => {
     if (command === 'send_url') {
+      
       chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         var activeTab = tabs[0];
         var url = activeTab.url;
         console.log('Current URL:', url); // print the URL
+
+        chrome.notifications.create({
+          type: 'basic',
+          iconUrl: '128.png',
+          title: 'Quivr',
+          message: "Starting crawl of " + url,
+          priority: 2
+        });
   
         chrome.storage.sync.get(['bearerToken'], function(result) {
           var bearerToken = result.bearerToken;
@@ -29,9 +38,9 @@ chrome.commands.onCommand.addListener((command) => {
             // Create a notification with the response
             chrome.notifications.create({
               type: 'basic',
-              iconUrl: 'icon.png',
-              title: 'URL Sender',
-              message: JSON.stringify(data)
+              iconUrl: '128.png',
+              title: 'Quivr',
+              message: JSON.stringify(data.message),
             });
           });
         });
