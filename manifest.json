@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "URL Sender",
+    "version": "1.0",
+    "permissions": ["activeTab", "storage","notifications"],
+    "action": {
+        "default_icon": {
+          "48": "icon.png"
+        }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "commands": {
+      "send_url": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+Y",
+          "mac": "Command+Shift+Y"
+        },
+        "description": "Send URL to the API"
+      }
+    },
+    "options_page": "options.html"
+  }
+  
